@@ -1,3 +1,5 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -119,6 +121,12 @@ public class TechJobs {
 
     // Print a list of jobs
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
+//loop through arraylist (allJobs ?) to find each hashmap
+        //each map = 1 job
+        loadData();
+        ArrayList<HashMap<String, String>> listedJobs = new ArrayList<>();
+
+        System.out.println("*****");
 
         System.out.println("printJobs is not implemented yet");
     }
