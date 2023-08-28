@@ -121,13 +121,25 @@ public class TechJobs {
 
     // Print a list of jobs
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
-//loop through arraylist (allJobs ?) to find each hashmap
-        //each map = 1 job
-        loadData();
+
         ArrayList<HashMap<String, String>> listedJobs = new ArrayList<>();
-
-        System.out.println("*****");
-
-        System.out.println("printJobs is not implemented yet");
+        String stars = "*****\n";
+        String lineBreak = "\n";
+        for (HashMap<String, String> job : someJobs) {
+            System.out.println(stars +
+                    "position type: " + job.get("position type")
+                   + lineBreak + "name: " + job.get("name")
+                    + lineBreak + "employer: " + job.get("employer")
+                    + lineBreak + "location: " + job.get("location")
+                    + lineBreak + "core competency: " + job.get("core competency")
+                    + lineBreak + stars);
+        }
     }
 }
+
+// But then I started a for-each loop that loops through the HashMap.
+// My line for that looks like: for (HashMap<String, String> job : someJobs)
+// and you can hard code the next lines with the print line and something
+// like “position type: ” + job.get(“position type); ect.
+// Which will get the values to print, or you can create the nested loop
+// where you’ll use another for-each loop with Map.Entry
