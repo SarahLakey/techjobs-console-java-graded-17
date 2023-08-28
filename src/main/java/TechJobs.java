@@ -136,10 +136,3 @@ public class TechJobs {
         }
     }
 }
-
-// But then I started a for-each loop that loops through the HashMap.
-// My line for that looks like: for (HashMap<String, String> job : someJobs)
-// and you can hard code the next lines with the print line and something
-// like “position type: ” + job.get(“position type); ect.
-// Which will get the values to print, or you can create the nested loop
-// where you’ll use another for-each loop with Map.Entry
