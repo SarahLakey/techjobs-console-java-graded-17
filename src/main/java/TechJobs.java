@@ -61,14 +61,14 @@ public class TechJobs {
 
                 // What is their search term?
                 System.out.println("\nSearch term:");
-                String searchTerm = in.nextLine().toLowerCase();
+                String searchTerm = in.nextLine();
 
                 if (searchField.equals("all")) {
                     printJobs(JobData.findByValue(searchTerm));
+                } else if (!searchField.contains(columnChoices)){
+                    printJobs();
                 } else {
                     printJobs(JobData.findByColumnAndValue(searchField, searchTerm));
-//                } else {
-//                    printJobs(JobData.findByValue(searchField, searchTerm));
                 }
             }
         }
@@ -125,16 +125,14 @@ public class TechJobs {
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
 
         ArrayList<HashMap<String, String>> listedJobs = new ArrayList<>();
-        String stars = "*****\n";
+        String stars = "*****";
         String lineBreak = "\n";
         for (HashMap<String, String> job : someJobs) {
-            System.out.println(stars +
-                    "position type: " + job.get("position type")
-                   + lineBreak + "name: " + job.get("name")
-                    + lineBreak + "employer: " + job.get("employer")
-                    + lineBreak + "location: " + job.get("location")
-                    + lineBreak + "core competency: " + job.get("core competency")
-                    + lineBreak + stars);
+            System.out.println(stars);
+            for(Map.Entry<String, String> column: job.entrySet()){
+                System.out.println(column.getKey() + ": " + column.getValue());
+            }
+            System.out.println(stars + "\n");
         }
     }
 }
